@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+<h3>Kontrol Paneli</h3>
+<hr>
+<p>
+Hoşgeldiniz,<small>{{request.user.username}}</small>
+<hr>
+</p>
+<a class="btn btn-danger" href="{% url 'article:addarticle' %}">Makale Ekle</a>
+<br><br>
+{% if articles %} <!--benim articles makalelerim varsa tabloda bunu göster yapcam-->
+    <table class="table">
+        <thead>
+        <tr >
+            <th scope="col">id</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Yazar</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Güncelle</th>
+            <th scope="col">Sil</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr class="table-info">
+                <th scope="row">{{article.id}}</th>
+                <td class="table-info"><a href="{% url 'article:detail' article.id %}">{{article.title}}</a></td>
+                <td class="table-info">{{article.author.username}}</td>  <!--article daki yazarin usernamesi olcak-->
+                <td class="table-info">{{article.created_date}}</td>
+                <td class="table-info"> <a href="{% url 'article:update' article.id %}" class="btn btn-success">Güncelle</a></td>
+                <td class="table-info"><a href="{% url 'article:delete' article.id %}" class="btn btn-danger">Sil</a></td>
+            </tr class="table-info">
+    
+        {% endfor %}
+    <!--
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    -->
+        </tbody>
+    </table>
+
+{% else %}
+<div class="alert alert-danger">Henüz  bir makaleniz yoktur...</div>
+{% endif %}
+
+{% endblock  %}
+
+

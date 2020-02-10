@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<p>
+    {% if request.user.is_authenticated %} <!--eger benim sistemde bir user varsa ve giris yapmissa demek-->
+        {{request.user.username}},tarafından giriş yapıldı.      
+    {% else %}
+        Kullanıcı Girişi Yapılmamış
+    {% endif %}
+
+</p>
+
+<div class="jumbotron text-center">
+    <div class="container pt-3">
+    <h3>Python Bloğuna Hoşgeldiniz...</h3>
+    <p>Bu blogta amacımız her yaşa ve her seviyeye uygun bir şekilde Python'ını sevdirerek öğretmektir... </p>
+    </div>
+</div>
+
+
+
+<!--
+<ul>
+{% for number in number  %}
+        <li>{{number}}</li>
+
+{% endfor %}
+</ul>
+-->
+
+<!--
+<div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/forest2.jpg);">
+  <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+    <div class="py-5">
+
+      
+      <h2 class="card-title h2 my-4 py-2">Python Bloğuna Hoşgeldiniz...</h2>
+      <p class="mb-4 pb-2 px-md-5 mx-md-5">Bu blogta amacımız her yaşa ve her seviyeye uygun bir şekilde Python'ını sevdirerek öğretmektir...</p>
+      
+
+    </div>
+  </div>
+</div>
+-->
+<h3>Python Programlama Dili Nedir ve Ne İşe Yarar?</h3>
+<hr>
+    <p>
+    Python esas olarak nesne tabanlı programlamayı, belli bir oranda da fonksiyonel programlamayı destekleyen genel amaçlı bir programlama dilidir. 1991 yılında ilk sürümü geliştirilen Python görece kolaylığı, geniş standart kütüphanesi ve dinamik yapısı nedeniyle günümüzde oldukça popülerleşmiş ve yaygın bir kullanıcı kitlesine ulaşmıştır.
+
+Özellikle bilimsel ve hesaplamalı mühendislik konularında sıkça tercih edilen Python programlama dili, 2000’li yıllardan itibaren yaşanan donanımsal ve yazılımsal gelişmeler ile paralel olarak  geniş bir kullanım alanına kavuşmuştur. Python gibi yorumlanan diller yüksek seviyede veri yapıları kullandığından hafızada çok yer tutar ancak günümüzde yüksek bellek seviyelerine ulaşmak kolay olduğundan, bu durum önemli bir olumsuzluk olmaktan çıkmıştır. Yazılımsal açıdan ise internet ile beraber gelen açık kaynak kod ve özgür yazılım akımının yaygınlık kazanması, geliştiricilerin İnternet üzerinden ve geliştirilen araçlar aracılığıyla eş-güdümlü çalışmalarını beraberinde getirmiştir. Bu durum da yine Python kullanımının artmasının önemli nedenlerinden biridir.
+
+Özgür ve açık kaynak kod mantığına dayanan Python’ın standart kütüphanesi, geliştirme araçları ve diğer birçok kütüphane, lisansa gerek duyulmaksızın açık kaynak kod olarak ücretsiz şekilde indirilebilmektedir. Öte yandan basitliğinin ve yorumlanan bir dil olmasının  getirdiği bazı avantajlar vardır: ilk olarak yorumlayıcı üzerinde etkileşimli olarak çalışılabildiğinden dilin yeni kütüphanelerini öğrenmek ve keşif yapmak görece kolaydır. İkinci avantajı, yeni bir program yazılırken hızlıca deneme yapmaya olanak vermesidir. Son olarak da hesaplamaları adım adım görmeye ve eldeki problemin şekillenişini verimli şekilde takip etmeye izin vermesidir.
+    </p>
+    <hr>
+
+
+{% endblock  %}
+
