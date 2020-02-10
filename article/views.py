@@ -1,7 +1,7 @@
 from django.shortcuts import render,HttpResponse,redirect,get_object_or_404,reverse
-from article.forms import ArticleForm
+from .forms import ArticleForm
 from django.contrib import messages
-from article.models import Article,Comment
+from .models import Article,Comment
 from django.contrib.auth.decorators import login_required
 
 
